@@ -1,0 +1,5 @@
+
+
+#define READ_INSTR 0x02
+#define WRITE_INSTR 0x03
+#define STATUS_INSTR 0x55
