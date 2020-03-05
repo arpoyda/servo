@@ -1615,6 +1615,9 @@
             <name>$PROJ_DIR$\protocol.h</name>
         </file>
         <file>
+            <name>$PROJ_DIR$\tim_pwm.h</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\uart.h</name>
         </file>
     </group>
@@ -1625,6 +1628,9 @@
         </file>
         <file>
             <name>$PROJ_DIR$\protocol.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\tim_pwm.c</name>
         </file>
         <file>
             <name>$PROJ_DIR$\uart.c</name>
