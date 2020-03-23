@@ -19,6 +19,9 @@ void tim2_pwm_init() {
   TIM2_CCR1H = timer2_ccr1 >> 8;
   TIM2_CCR1L = timer2_ccr1 & 0x00FF;
 
+  TIM1_CNTRH = 0;
+  TIM1_CNTRL = 0;
+
   TIM2_CCER1_CC1P = 1; // channel 1 active low
   TIM2_CCER1_CC1E = 1; // Enable channel 1 output
 

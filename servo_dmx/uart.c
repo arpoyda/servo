@@ -64,7 +64,7 @@ uint16_t uart_tx(uint8_t *data, uint8_t len){
 }
 
 #pragma vector=UART1_R_RXNE_vector 
-__interrupt void uart_r_rxne_interrupt(void){
+__interrupt void uart_rxne_interrupt(void){
 
   TIM1_CNTRH = 0;
   TIM1_CNTRL = 0;
@@ -82,7 +82,7 @@ __interrupt void uart_r_rxne_interrupt(void){
 }
 
 #pragma vector=UART1_T_TXE_vector
-__interrupt void uart_t_txe_interrupt(void){
+__interrupt void uart_txe_interrupt(void){
 
   uint8_t tail;
   tail = txtail;

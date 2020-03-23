@@ -2109,6 +2109,9 @@
             <name>$PROJ_DIR$\protocol.h</name>
         </file>
         <file>
+            <name>$PROJ_DIR$\spi.h</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\tim_pwm.h</name>
         </file>
         <file>
@@ -2122,6 +2125,9 @@
         </file>
         <file>
             <name>$PROJ_DIR$\protocol.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\spi.c</name>
         </file>
         <file>
             <name>$PROJ_DIR$\tim_pwm.c</name>

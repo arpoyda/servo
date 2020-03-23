@@ -1,156 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
     <fileVersion>2</fileVersion>
-    <fileChecksum>516830786</fileChecksum>
+    <fileChecksum>3513406183</fileChecksum>
     <configuration>
         <name>Debug</name>
         <outputs>
+            <file>$PROJ_DIR$\protocol.c</file>
+            <file>$PROJ_DIR$\tim_pwm.c</file>
+            <file>$PROJ_DIR$\main.c</file>
             <file>$PROJ_DIR$\Debug\Obj\pwm.o</file>
-            <file>$PROJ_DIR$\Debug\Exe\servo_dmx.out</file>
-            <file>$TOOLKIT_DIR$\lib\dlstm8smn.a</file>
-            <file>$TOOLKIT_DIR$\inc\c\xencoding_limits.h</file>
-            <file>$TOOLKIT_DIR$\config\lnkstm8s003f3.icf</file>
+            <file>$PROJ_DIR$\Debug\Obj\protocol.o</file>
             <file>$TOOLKIT_DIR$\inc\c\DLib_Threads.h</file>
+            <file>$PROJ_DIR$\spi.c</file>
+            <file>$PROJ_DIR$\tim_pwm.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\protocol.pbi</file>
+            <file>$PROJ_DIR$\Debug\Exe\servo_dmx.out</file>
+            <file>$TOOLKIT_DIR$\inc\io_macros.h</file>
+            <file>$PROJ_DIR$\uart.c</file>
+            <file>$PROJ_DIR$\uart.h</file>
+            <file>$PROJ_DIR$\hal.c</file>
+            <file>$PROJ_DIR$\Debug\Obj\hal.pbi</file>
+            <file>$TOOLKIT_DIR$\config\lnkstm8s003f3.icf</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\spi.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\spi.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\uart.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\servo_dmx.pbd</file>
+            <file>$PROJ_DIR$\Debug\Obj\tim_pwm.pbi</file>
+            <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
             <file>$PROJ_DIR$\Debug\Obj\pwm.pbi</file>
             <file>$PROJ_DIR$\Debug\Obj\tim_pwm.o</file>
-            <file>$PROJ_DIR$\Debug\Obj\hal.pbi</file>
-            <file>$PROJ_DIR$\Debug\Obj\tim_pwm.pbi</file>
-            <file>$PROJ_DIR$\Debug\Obj\main.__cstat.et</file>
-            <file>$PROJ_DIR$\Debug\Obj\uart.pbi</file>
             <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
-            <file>$PROJ_DIR$\Debug\List\servo_dmx.map</file>
-            <file>$PROJ_DIR$\Debug\Obj\protocol.o</file>
-            <file>$TOOLKIT_DIR$\inc\io_macros.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\main.o</file>
-            <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
-            <file>$TOOLKIT_DIR$\inc\c\inttypes.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
             <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\protocol.pbi</file>
-            <file>$TOOLKIT_DIR$\lib\dlstm8smn.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\hal.o</file>
-            <file>$TOOLKIT_DIR$\inc\c\intrinsics.h</file>
-            <file>$TOOLKIT_DIR$\lib\dbgstm8smd.a</file>
-            <file>$PROJ_DIR$\protocol.c</file>
-            <file>$PROJ_DIR$\hal.c</file>
-            <file>$PROJ_DIR$\uart.h</file>
-            <file>$PROJ_DIR$\uart.c</file>
-            <file>$PROJ_DIR$\Debug\Obj\servo_dmx.pbd</file>
-            <file>$PROJ_DIR$\Debug\Obj\uart.o</file>
             <file>$PROJ_DIR$\pwm.c</file>
+            <file>$PROJ_DIR$\Debug\Obj\hal.o</file>
+            <file>$TOOLKIT_DIR$\inc\c\xencoding_limits.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\intrinsics.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\main.o</file>
+            <file>$TOOLKIT_DIR$\inc\c\inttypes.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\main.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\List\servo_dmx.map</file>
+            <file>$TOOLKIT_DIR$\lib\dbgstm8smd.a</file>
+            <file>$PROJ_DIR$\Debug\Obj\uart.pbi</file>
+            <file>$TOOLKIT_DIR$\lib\dlstm8smn.a</file>
+            <file>$TOOLKIT_DIR$\lib\dlstm8smn.h</file>
             <file>$PROJ_DIR$\hal.h</file>
             <file>$PROJ_DIR$\protocol.h</file>
-            <file>$PROJ_DIR$\tim_pwm.c</file>
-            <file>$PROJ_DIR$\tim_pwm.h</file>
-            <file>$PROJ_DIR$\main.c</file>
+            <file>$PROJ_DIR$\spi.h</file>
             <file>$PROJ_DIR$\iostm8s003f3.h</file>
-            <file>$PROJ_DIR$\tim_uart.h</file>
         </outputs>
-        <file>
-            <name>$PROJ_DIR$\Debug\Exe\servo_dmx.out</name>
-            <outputs>
-                <tool>
-                    <name>ILINK</name>
-                    <file> 13</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ILINK</name>
-                    <file> 4 25 16 14 7 33 2 27</file>
-                </tool>
-            </inputs>
-        </file>
         <file>
             <name>$PROJ_DIR$\protocol.c</name>
             <outputs>
                 <tool>
                     <name>ICCSTM8</name>
-                    <file> 14</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 22</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCSTM8</name>
-                    <file> 36 18 12 19 24 20 23 21 3 5 40 15 30 26 35</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 12 23 40 20 21 18 19 24 3 5 15 36 30 35 26</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\hal.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCSTM8</name>
-                    <file> 25</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 8</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCSTM8</name>
-                    <file> 35 18 12 19 24 20 23 21 3 5 40 15</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 24 15 18 19 12 3 5 40 20 23 21 35</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\uart.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCSTM8</name>
-                    <file> 33</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 11</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCSTM8</name>
-                    <file> 30 40 15 18 12 19 24 20 23 21 3 5 26</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 26 40 19 23 18 15 12 24 3 21 30 20 5</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\pwm.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCSTM8</name>
-                    <file> 0</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 6</file>
-                </tool>
-            </outputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\tim_pwm.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCSTM8</name>
-                    <file> 7</file>
+                    <file> 4</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
@@ -160,11 +66,34 @@
             <inputs>
                 <tool>
                     <name>ICCSTM8</name>
-                    <file> 38 40 15 18 12 19 24 20 23 21 3 5 26</file>
+                    <file> 42 34 27 8 23 28 40 17 31 5 44 11 13 32 41</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 40 15 19 24 12 3 5 18 38 26 20 23 21</file>
+                    <file> 27 40 44 28 17 34 8 23 31 5 11 42 13 41 32</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\tim_pwm.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCSTM8</name>
+                    <file> 26</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 22</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCSTM8</name>
+                    <file> 7 44 11 34 27 8 23 28 40 17 31 5 32</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 44 11 8 23 27 31 5 34 7 32 28 40 17</file>
                 </tool>
             </inputs>
         </file>
@@ -173,34 +102,127 @@
             <outputs>
                 <tool>
                     <name>ICCSTM8</name>
-                    <file> 16</file>
+                    <file> 33</file>
                 </tool>
                 <tool>
                     <name>__cstat</name>
-                    <file> 10</file>
+                    <file> 35</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 17</file>
+                    <file> 24</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCSTM8</name>
-                    <file> 40 15 18 12 19 24 20 23 21 3 5 30 26 36 35 38</file>
+                    <file> 44 11 34 27 8 23 28 40 17 31 5 13 32 42 41 7 43</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\spi.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCSTM8</name>
+                    <file> 19</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 40 35 12 20 30 38 24 18 36 26 15 19 5 3 23 21</file>
+                    <file> 18</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCSTM8</name>
+                    <file> 43 34 27 8 23 28 40 17 31 5 44 11 32</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 23 11 34 8 27 31 5 44 28 40 17 43 32</file>
                 </tool>
             </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Debug\Exe\servo_dmx.out</name>
+            <outputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 36</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 16 30 33 4 19 26 20 39 37</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\uart.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCSTM8</name>
+                    <file> 20</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 38</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCSTM8</name>
+                    <file> 13 44 11 34 27 8 23 28 40 17 31 5 32</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 32 44 8 40 34 11 27 23 31 17 13 28 5</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\hal.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCSTM8</name>
+                    <file> 30</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 15</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCSTM8</name>
+                    <file> 41 34 27 8 23 28 40 17 31 5 44 11</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 23 11 34 8 27 31 5 44 28 40 17 41</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\pwm.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCSTM8</name>
+                    <file> 3</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 25</file>
+                </tool>
+            </outputs>
         </file>
         <file>
             <name>[ROOT_NODE]</name>
             <outputs>
                 <tool>
                     <name>ILINK</name>
-                    <file> 1 13</file>
+                    <file> 10 36</file>
                 </tool>
             </outputs>
         </file>
