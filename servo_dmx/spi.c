@@ -1,11 +1,14 @@
 #include "spi.h"
 
-uint16_t rxshort_ex, txshort_ex;
+uint8_t rxbuf_spi[2];
+uint8_t rxbuf_spi_ex[2];
+
 
 void SPI_init(){
-	rxshort = 0;
-	rxshort_ex = 0;
-
+        rxbuf_spi[0] = 0;
+        rxbuf_spi[1] = 0;
+        rxbuf_spi_ex[0] = 0;
+        rxbuf_spi_ex[1] = 0;
 	PC_DDR_DDR3 = 1;
   	PC_CR1_C13 = 1;
         PC_ODR_ODR3 = 1;
@@ -35,7 +38,44 @@ void SPI_init(){
 	SPI_CR1_SPE = 1;
 }
 
+void angle_without_request(){
+        uint8_t a = 0xE0;
+        uint8_t b = 0x88;
+	while(SPI_SR_BSY){};
+        PC_ODR_ODR3 = 0; // CS -> LOW
+	SPI_DR = 0x7F;
+        while(b--){};
+        SPI_DR =0xFE;
 
+        while(a--){};
+        PC_ODR_ODR3 = 1;        
+}
+
+void angle_request(){
+        uint8_t a = 0xE0;
+        uint8_t b = 0x88;
+	while(SPI_SR_BSY){};
+        PC_ODR_ODR3 = 0; // CS -> LOW
+	SPI_DR = 0xFF;
+        while(b--){};
+        SPI_DR =0xFF;
+
+        while(a--){};
+        PC_ODR_ODR3 = 1;        
+}
+
+void field_request(){
+        uint16_t a = 0xE0;
+        uint8_t b = 0x88;
+	while(SPI_SR_BSY){};
+        PC_ODR_ODR3 = 0; // CS -> LOW
+	SPI_DR = 0xFF;
+        while(b--){};
+        SPI_DR =0xFC;
+
+        while(a--){};
+        PC_ODR_ODR3 = 1;        
+}
 
 
 static uint16_t parity(uint16_t msg){
@@ -52,19 +92,6 @@ static uint16_t parity(uint16_t msg){
 }
 
 
-void request_angle(){
-        uint8_t a = 0xFF;
-        uint8_t b = 0x88;
-        PC_ODR_ODR3 = 0; // CS -> LOW
-        //while(SPI_SR_BSY){};
-        SPI_DR = 0xFF;
-        //while(SPI_SR_BSY){};
-        while(b--){};
-	SPI_DR = 0xFF;
-	//SPI_ICR_TXIE = 0;
-        while(a--){};
-        PC_ODR_ODR3 = 1; // CS -> HIGH    
-}
 
 #pragma vector = SPI_TXE_vector // one Vector for both interrupts
 __interrupt void spi_txe_rxne_interrupt(void){ // one Function for both interrupts
@@ -72,10 +99,14 @@ __interrupt void spi_txe_rxne_interrupt(void){ // one Function for both interrup
 
 	if (SPI_SR_RXNE){
 		if (i){
-			rxshort = SPI_DR << 8;
+
+                        rxbuf_spi[0] = SPI_DR;
 		}else{
-			rxshort |= SPI_DR;
-			if (parity(rxshort)) rxshort_ex = rxshort;
+			rxbuf_spi[1] = SPI_DR;
+			if (parity(rxbuf_spi[0]|rxbuf_spi[1])){
+                          rxbuf_spi_ex[0] = rxbuf_spi[0];
+                          rxbuf_spi_ex[1] = rxbuf_spi[1];
+                        }
 		}
                 i = !i;
 	}

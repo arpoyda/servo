@@ -1,6 +1,7 @@
 #include "uart.h"
 
 void UART_init(uint32_t baudrate, uint32_t freq){
+  
   rxtail = 0;
   rxhead = 0;
   txtail = 0;
