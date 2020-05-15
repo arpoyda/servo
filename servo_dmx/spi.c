@@ -88,7 +88,7 @@ static uint16_t parity(uint16_t msg){
 		msg >>= 1;
 	}
 
-	return (parity & 0x1);
+	return (parity == (msg>>15));
 }
 
 
@@ -99,14 +99,13 @@ __interrupt void spi_txe_rxne_interrupt(void){ // one Function for both interrup
 
 	if (SPI_SR_RXNE){
 		if (i){
-
                         rxbuf_spi[0] = SPI_DR;
 		}else{
 			rxbuf_spi[1] = SPI_DR;
-			if (parity(rxbuf_spi[0]|rxbuf_spi[1])){
-                          rxbuf_spi_ex[0] = rxbuf_spi[0];
-                          rxbuf_spi_ex[1] = rxbuf_spi[1];
-                        }
+			//if (parity((rxbuf_spi[0]<<8) | rxbuf_spi[1])){
+                        rxbuf_spi_ex[0] = rxbuf_spi[0] & 0x3FFF;
+                        rxbuf_spi_ex[1] = rxbuf_spi[1];
+                        //}
 		}
                 i = !i;
 	}

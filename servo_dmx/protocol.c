@@ -91,45 +91,46 @@ void USART1_RXHandeler(uint8_t* data, uint32_t rx_len){
         int16_t i;
         for(i=0;i<size;i++) {
               if (is_reg(address+i)) {
-                  tp = read_register(address+i);
-                  modbus_dataTX[i+9] = (uint8_t)tp;
-                  answ = 1;
-               }
+                tp = read_register(address+i);
+                modbus_dataTX[i+9] = (uint8_t)tp;
+                answ = 1;
+              } else {
+                answ = 0;
+              }
         }
         if (answ) {
           crc = CRC16(0, modbus_dataTX, size+9);
         
           modbus_dataTX[size+9] = (crc & 0x00FF);
           modbus_dataTX[size+10] = (crc >>8);
-          uart_tx(modbus_dataTX,size+11);
-       }
-    break;
+          uart_tx(modbus_dataTX, size+11);
+        }
+        break;
     
   case WRITE_INSTR:
-    address = data[9]<<8 | data[8];
-    
-    modbus_dataTX[4] = modbus_id;//ID
-    modbus_dataTX[5] = 0x04;//LEN_L
-    modbus_dataTX[6] = 0x00;//LEN_H
-    modbus_dataTX[7] = STATUS_INSTR;
-    modbus_dataTX[8] = ERR_CODE;
+        address = data[9]<<8 | data[8];
         
+        modbus_dataTX[4] = modbus_id;//ID
+        modbus_dataTX[5] = 0x04;//LEN_L
+        modbus_dataTX[6] = 0x00;//LEN_H
+        modbus_dataTX[7] = STATUS_INSTR;
+        modbus_dataTX[8] = ERR_CODE;
+            
+        if (is_reg(address)) {
+          int16_t i;
+          for (i=0; i<(len-4);i++){
+             write_register(address+i, data[i+10]);// CHECK LATER!--------------------------
+          }
+          answ = 1;// CHECK LATER!----------------------------------------------------------
+        }
         
-    if (is_reg(address)) {
-      int16_t i;
-      for (i=0; i<(len-4);i++){
-         write_register(address+i, data[i+10]);// CHECK LATER!--------------------------
-      }
-      answ = 1;// CHECK LATER!----------------------------------------------------------
-    }
-    
-    if (answ) { 
-      crc = CRC16(0, modbus_dataTX, 9);
-      modbus_dataTX[9] = (crc & 0x00FF);
-      modbus_dataTX[10] = (crc >>8);
-      uart_tx(modbus_dataTX, 11);
-    }
-    break;
+        if (answ) { 
+          crc = CRC16(0, modbus_dataTX, 9);
+          modbus_dataTX[9] = (crc & 0x00FF);
+          modbus_dataTX[10] = (crc >>8);
+          uart_tx(modbus_dataTX, 11);
+        }
+        break;
   }
 }
 

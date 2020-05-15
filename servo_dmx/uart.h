@@ -10,8 +10,8 @@
 #define F_MASTER 16000000
 
 
-#define RXBUFSIZE 16
-#define TXBUFSIZE 16
+#define RXBUFSIZE 64
+#define TXBUFSIZE 64
 
 #define DIV2BRR1(d) (((d) >> 4) & 0xFF)
 #define DIV2BRR2(d) ((((d) >> 8) & 0xF0) | ((d) & 0xF))
@@ -30,4 +30,5 @@ void UART_init(uint32_t baudrate, uint32_t freq);
 uint16_t uart_tx(uint8_t *data, uint8_t len);
 void tim1_uart_init();
 
+extern void USART1_RXHandeler(uint8_t *,uint32_t);
 #endif

@@ -14,11 +14,6 @@ void delay(unsigned long count) {
         asm("nop");
 }
 
-
-
-
-
-
 int main( void )
 {
   CLK_CKDIVR = 0;
@@ -27,25 +22,20 @@ int main( void )
   PA_CR1_C12 = 1;
   PA_ODR_ODR2 = 1;
   //===================================================
-  modbus_init(2);
+  modbus_init(1);
   SPI_init();
   tim2_pwm_init();
-  //uint8_t data[4] = {0x01,0xAA,0x5,0x11};
-  //enableInterrupts();
   __enable_interrupt();
-  //uint8_t data[5] = {0x48,0x45,0x4c,0x4c,0x4f};
-  //uart_tx(data, 5);
-  uint8_t zero_buf[2] = {0,0};
+  uint8_t data[5] = {0x48,0x45,0x4c,0x4c,0x4f};
+  uint8_t data1[3] = {0x00,0x00,0x00};
   while(1){
-    
-    int a = 200000;
+    int a = 2000000;
     while(a--);
     //angle_request();
-    uart_tx(zero_buf, 2);
-    //angle_request();
-    uart_tx(rxbuf_spi_ex, 2);
-    
-    //test_send(0xF2);`
+    //uart_tx(data, 5);
+    //uint16_t b = 50000;
+    //while(b--){};
+    //uart_tx(data1, 3);
     
   }
 }

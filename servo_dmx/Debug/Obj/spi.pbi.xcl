@@ -1,4 +1,4 @@
-"C:\Users\User\Documents\GitHub\servo_dmx\spi.c"
+"C:\Users\Arseny\Documents\MicroControllers\STM8\servo_dmx\spi.c"
 -std=c99
 -ferror-limit=0
 -I

@@ -49,7 +49,7 @@
         <MultiCoreRunAll>1</MultiCoreRunAll>
     </Simulator>
     <DebugChecksum>
-        <Checksum>3480907702</Checksum>
+        <Checksum>462091635</Checksum>
     </DebugChecksum>
     <CallStack>
         <ShowArgs>0</ShowArgs>
@@ -57,9 +57,15 @@
     <Disassembly>
         <MixedMode>1</MixedMode>
     </Disassembly>
+    <array_types>
+        <Fmt0>uint8_t[16]	4	0</Fmt0>
+        <Fmt1>uint8_t[2]	1	0</Fmt1>
+        <Fmt2>uint8_t[64]	4	0</Fmt2>
+    </array_types>
     <watch_formats>
-        <Fmt0>{W}42:rxshort_ex	4	0</Fmt0>
-        <Fmt1>{W}42:txshort	4	0</Fmt1>
+        <Fmt0>{W}42:rxhead	3	0</Fmt0>
+        <Fmt1>{W}42:rxshort_ex	4	0</Fmt1>
+        <Fmt2>{W}42:txshort	4	0</Fmt2>
     </watch_formats>
     <DataSample>
         <LogEnabled>0</LogEnabled>
@@ -67,7 +73,9 @@
         <ShowTimeLog>1</ShowTimeLog>
     </DataSample>
     <Breakpoints>
-        <Count>0</Count>
+        <Bp0>_ "STD_CODE" "{$PROJ_DIR$}.107.27" 0 0 0 0 "" 0 ""</Bp0>
+        <Bp1>_ "STD_CODE" "{$PROJ_DIR$\main.c}.35.7" 0 0 0 0 "" 0 ""</Bp1>
+        <Count>2</Count>
     </Breakpoints>
     <LogFile>
         <LoggingEnabled>_ 0</LoggingEnabled>
@@ -79,8 +87,12 @@
         <LogFile>_ ""</LogFile>
     </TermIOLog>
     <Aliases>
-        <Count>0</Count>
-        <SuppressDialog>0</SuppressDialog>
+        <A0>_ "C:\Users\User\Documents\GitHub\servo_dmx\main.c" ""</A0>
+        <A1>_ "C:\Users\User\Documents\GitHub\servo_dmx\spi.c" ""</A1>
+        <A2>_ "C:\Users\User\Documents\GitHub\servo_dmx\tim_pwm.c" ""</A2>
+        <A3>_ "C:\Users\User\Documents\GitHub\servo_dmx\uart.c" ""</A3>
+        <Count>4</Count>
+        <SuppressDialog>1</SuppressDialog>
     </Aliases>
     <DebuggerSettings>
         <DisableInterruptsWhenStepping>0</DisableInterruptsWhenStepping>

@@ -54,7 +54,7 @@ uint16_t uart_tx(uint8_t *data, uint8_t len){
     txtail = 0;
     rxhead = 0;
     //UART1_CR2_TEN = 1;
-    UART1_CR2_RIEN = 0;
+    UART1_CR2_REN = 0;
     UART1_CR2_TCIEN = 1;
 
     return 1;
@@ -97,7 +97,7 @@ __interrupt void uart_txe_interrupt(void){
     UART1_CR2_TCIEN = 0; /* disable TX interrupt */
     //UART1_CR2_TEN = 0;
     //PD_ODR_ODR5 = 0;
-    UART1_CR2_RIEN = 1;
+    UART1_CR2_REN = 1;
   }
 }
 
@@ -134,9 +134,10 @@ __interrupt void tim1_uart_handler(void){
       rxbuf_ex[i] = rxbuf[i];
       rxbuf[i] = 0;
     }
+    USART1_RXHandeler(rxbuf_ex, rxhead);
     rxhead = 0;
   }
-
+  angle_request();
 }
 
 

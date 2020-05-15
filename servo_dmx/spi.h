@@ -18,5 +18,4 @@ void angle_without_request();
 void angle_request();
 void field_request();
 
-
 #endif

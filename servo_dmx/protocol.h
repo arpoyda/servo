@@ -9,7 +9,7 @@
 #define STATUS_INSTR 0x55
 #define ERR_CODE 0
 
-#define ID_DEFAULT 2
+#define ID_DEFAULT 1
 
 #define UART_BOUND 115200
 #define F_MASTER 16000000
